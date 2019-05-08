@@ -1,12 +1,9 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
 import styles from './styles';
-
 import Icon from './Icon';
-
 import {View, Text, TouchableHighlight} from 'react-native';
+
 const ListItem = ({
   text, 
   onPress, 

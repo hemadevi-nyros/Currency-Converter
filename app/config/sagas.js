@@ -1,7 +1,6 @@
 import {
   takeEvery, call, put, select,
 } from 'redux-saga/effects';
-
 import {
   CHANGE_BASE_CURRENCY,
   GET_INITIAL_CONVERSION,
@@ -11,9 +10,7 @@ import {
 } from '../actions/currencies';
 
 
-
 export const getLatestRate = currency => fetch(`http://fixer.handlebarlabs.com/latest?base=${currency}`);
-
 const fetchLatestConversionRates = function* (action) {
   try {
     let { currency } = action;
