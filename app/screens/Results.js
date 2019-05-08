@@ -9,14 +9,14 @@ import {connect} from 'react-redux';
 
 class Results extends Component {
  static propTypes ={
- 	 navigation: PropTypes.object,
- 	 baseCurrency: PropTypes.string,
-   quoteCurrency: PropTypes.string,
-   amount: PropTypes.number,
-   conversionRate: PropTypes.number,
-   isFetching: PropTypes.bool,
-   lastConvertedDate: PropTypes.object,
-   primaryColor: PropTypes.string,
+ navigation: PropTypes.object,
+ baseCurrency: PropTypes.string,
+ quoteCurrency: PropTypes.string,
+ amount: PropTypes.number,
+ conversionRate: PropTypes.number,
+ isFetching: PropTypes.bool,
+ lastConvertedDate: PropTypes.object,
+ primaryColor: PropTypes.string,
  };
  handleHomePress =() =>{
    this.props.navigation.navigate('Home');
@@ -30,7 +30,7 @@ class Results extends Component {
      quotePrice = (this.props.amount).toFixed(2);
     }
    return (
- 	   <Container backgroundColor={this.props.primaryColor}>
+   <Container backgroundColor={this.props.primaryColor}>
        <Logo tintColor={this.props.primaryColor} />
        <View style={styles.box}>
          <View style={styles.content}>
@@ -69,33 +69,32 @@ const mapStatetoProps = (state) => {
    conversionRate: rates[quoteCurrency] || 0,
    isFetching: conversionSelector.isFetching,
    lastConvertedDate: conversionSelector.date ? new Date(conversionSelector.date) : new Date(),
-    primaryColor: state.theme.primaryColor,
+   primaryColor: state.theme.primaryColor,
   };
 };
 
 const styles = StyleSheet.create({
-	box:{
-	 marginTop: 10,
-	 marginBottom: 10,
-   width: 300,
-   height: 200,
-   justifyContent: 'center',
-   borderRadius: 15,
-	},
-	content: {
-   flexDirection: 'row',
-	},
-	number:{
-	 color: '#fff',
-   fontSize: 20,
-   paddingRight: 30,
-	},
-  text: {
-  	color: '#fff',
-  	fontSize: 20,
-  	paddingRight: 30,
-  	marginLeft: 80,
-  },
+box:{
+marginTop: 10,
+marginBottom: 10,
+width: 300,
+height: 200,
+justifyContent: 'center',
+borderRadius: 15,
+},
+content: {
+flexDirection: 'row',
+},
+number:{
+color: '#fff',
+fontSize: 20,
+addingRight: 30,
+},
+text: {
+color: '#fff',
+fontSize: 20,
+paddingRight: 30,
+marginLeft: 80,
+},
 });
-
 export default connect(mapStatetoProps)(Results);
